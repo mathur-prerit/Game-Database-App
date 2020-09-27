@@ -6,6 +6,7 @@ import {
 import { styles } from './src/assests/styling/master-style';
 import * Font as './2243  '
 import {AppLoading} from 'expo'
+import Navigator from './src/routes/home-stack'
 
 
 
@@ -16,11 +17,11 @@ const getFonts=()=>{
   })
 }
 
-export default function App() {
+export default function App({navigation}) {
   const [name, setName] = useState('Prerit');
 
   if(name){
-    return <ada></ada>
+    return <Navigator/>
   }else{
     <AppLoading
     startAsync={getFonts}
@@ -35,11 +36,14 @@ export default function App() {
       <StatusBar style="auto" />
   <Text>Welcome {name} to Game DB</Text>
       <View>
+  <Text>{navigation.getparam('title')}</Text>
         <TextInput keyboardType='numeric' multiline placeholder="Your Name" onChangeText={(val) => {
           setName(val);
         }}/>
         <Button title="lets see games" onPress={() => {
           Alert.alert(`Welcome ${name}`);
+          navigation.navigate('Details') /*or*/ navigation.push('Details')
+          navigation.goBack();
         }}/>
       </View>
     </View>
@@ -55,7 +59,7 @@ export default function App() {
     numColumns={2}
     keyExtractor={(item)=>item.id}
     data={people} renderItem=({item})=>(
-      <TouchableOpacity onPress={()=>pressHandlerfunc(id)}>
+      <TouchableOpacity onPress={()=>navigator.navigate('Details',item)}>
       <Text>fdfd</Text>
       </TouchableOpacity>
     )/>

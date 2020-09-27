@@ -1,12 +1,13 @@
 import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+import Header from '../components/common/Header';
 
 const screens = {
   Home: {
     screen: '///////////component',
-    navigationOptions: {
-      title: 'Gamezone',
-      headerStyle: { backgroundColor: 'red' },
-    },
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: () => <Header navigation={navigation} title={'hello'}/>,
+    }),
   },
   Details: {
     screen: '/////////////////////////compjnegt',

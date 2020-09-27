@@ -6,7 +6,7 @@ import {
 import { styles } from './src/assests/styling/master-style';
 import * Font as './2243  '
 import {AppLoading} from 'expo'
-import Navigator from './src/routes/home-stack'
+import Navigator from './src/routes/drawer'
 
 
 

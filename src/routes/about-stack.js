@@ -1,22 +1,19 @@
 import { createStackNavigator } from '@react-navigation/stack';
 
 const screens = {
-  Home: {
+  About: {
     screen: '///////////component',
     navigationOptions: {
-      title: 'Gamezone',
+      title: 'about',
       headerStyle: { backgroundColor: 'red' },
     },
   },
-  Details: {
-    screen: '/////////////////////////compjnegt',
-  },
 };
 
-const HomeStack = createStackNavigator(screens, {
+const AboutStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerStyle: { backgroundColor: 'green' },
   },
 });
 
-export default HomeStack;
+export default AboutStack;
